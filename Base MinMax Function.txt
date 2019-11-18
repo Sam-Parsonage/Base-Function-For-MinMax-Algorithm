@@ -1,0 +1,18 @@
+def minmax(position, depth, player):
+  if depth == 0:
+    return score()
+  
+  if (player == True):
+    maxEval = -9999999999999
+    for eachChild in position:
+      Eval = minMax(eachChild, depth - 1, false)
+      if (maxEval < Eval):
+        maxEval = Eval
+    return maxEval
+  else:
+    minEval = 999999999999999
+    for eachChild in position:
+      Eval = minMax(eachChild, depth - 1, True)
+      if (minEval > Eval):
+        minEval = Eval
+    return minEval
